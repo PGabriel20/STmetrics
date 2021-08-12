@@ -6,7 +6,7 @@ const Movies: React.FC = () => {
   return (
     <div>
         <h3>180.000</h3>
-        <strong>AMOUNT OF PLANETS</strong>
+        <strong>AMOUNT OF MOVIES</strong>
     </div>
   );
 }
