@@ -37,25 +37,24 @@
   
   margin-top: 1.2rem;
   
- > div{
-  width: 100%;
-  max-width: 205px;
-  height: 150px;
+  > div{
+    width: 100%;
+    max-width: 205px;
+    height: 150px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-  h3{
-    color: var(--text);
+    h3{
+      color: var(--text);
+    }
+
+    strong{
+      color: var(--title);
+    }
   }
-
-  strong{
-    color: var(--title);
-  }
-
- }
 }
 
 .bottomCards{
@@ -90,5 +89,10 @@
 @media(max-width: 768px){
   .mainContainer{
     height: fit-content;
+  }
+
+  .bottomCards{
+    justify-content: center;
+    margin-top: 1rem;
   }
 }

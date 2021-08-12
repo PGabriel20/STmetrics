@@ -1,13 +1,12 @@
 import React from 'react';
-import TopCharacters from '../../components/BottomCards/TopCharacters';
-import TopStarships from '../../components/BottomCards/TopStarships';
-import TopVehicles from '../../components/BottomCards/TopVehicles';
-import Header from '../../components/Header/Header';
-import Movies from '../../components/TopCards/Movies';
-import People from '../../components/TopCards/People';
-import Planets from '../../components/TopCards/Planets';
-import Starships from '../../components/TopCards/Starships';
-import Vehicles from '../../components/TopCards/Vehicles';
+import Movies from '../../components/MoviesCard/Movies';
+import People from '../../components/People/People';
+import Planets from '../../components/Planets/Planets';
+import Starships from '../../components/Starships/Starships';
+import TopCharacters from '../../components/TopCharacters/TopCharacters';
+import TopStarships from '../../components/TopStarships/TopStarships';
+import TopVehicles from '../../components/TopVehicles/TopVehicles';
+import Vehicles from '../../components/Vehicles/Vehicles';
 
 import './styles.scss';
 
