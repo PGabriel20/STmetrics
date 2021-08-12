@@ -5,7 +5,7 @@ import LandingPage from './pages/Landing';
 function Routes(){
     return(
       <BrowserRouter>
-        <Route path="/landing" exact component={LandingPage} />
+        <Route path="/" exact component={LandingPage} />
       </BrowserRouter>
     );
 }
