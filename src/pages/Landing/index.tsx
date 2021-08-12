@@ -13,25 +13,23 @@ import './styles.scss';
 
 const LandingPage: React.FC = () => {
   return (
-    <div className='pageWrapper'>
-      <div className='mainContainer'>
-        <section>
-          <img src="./assets/SWicon.svg" alt="Star Wars Logo" />
-          <h2>STAR WARS - Metrics and statistics</h2>
-        </section>
-        <div className='topCards'>
-          <People />
-          <Planets />
-          <Starships />
-          <Vehicles />
-          <Movies />
-        </div>
+    <div className='mainContainer'>
+      <section>
+        <img src="./assets/SWicon.svg" alt="Star Wars Logo" />
+        <h2>STAR WARS - Metrics and statistics</h2>
+      </section>
+      <div className='topCards'>
+        <People />
+        <Planets />
+        <Starships />
+        <Vehicles />
+        <Movies />
+      </div>
 
-        <div className='bottomCards'>
-          <TopVehicles />
-          <TopStarships />
-          <TopCharacters />
-        </div>
+      <div className='bottomCards'>
+        <TopVehicles />
+        <TopStarships />
+        <TopCharacters />
       </div>
     </div>
   );
