@@ -10,7 +10,7 @@ header{
 }
 .innerContainer{
   width: 100%;
-  max-width: 1120px;
+  max-width: 1180px;
 
   display: flex;
   justify-content: space-between;
@@ -35,5 +35,11 @@ header{
 
     background: var(--secondary);
     color: var(--white);
+
+    transition: .3s all;
+
+    &:hover{
+      background: #1cad59;
+    }
   }
 }
