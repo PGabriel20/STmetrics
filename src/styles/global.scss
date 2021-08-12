@@ -38,11 +38,12 @@ html{
 //Styling app scrollbar
 
 *::-webkit-scrollbar{
-  width:  7px;
+  width: 0.37rem;
 }
 
 *::-webkit-scrollbar-thumb{
   border-radius: 5px;
+  background: var(--main);
 }
 
 *::-webkit-scrollbar-track{
