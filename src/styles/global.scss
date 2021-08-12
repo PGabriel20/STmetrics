@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html, body, #root{
+  height: 100vh;
+  font-family: Poppins, sans-serif;
+}
+
+// creating color variables
+:root{
+  
+}
+
+// Media queries for the font size
+html{
+  @media(max-width: 1080px){
+    font-size: 93.75%; //15px
+  }
+  @media(max-width: 720px){
+    font-size: 87.5%; //14px
+  }
+}
+
+//Styling app scrollbar
+
+*::-webkit-scrollbar{
+  width:  7px;
+}
+
+*::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track{
+  background: var(--background);
+}
+
