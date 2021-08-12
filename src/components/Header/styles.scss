@@ -1,0 +1,39 @@
+header{
+  display: flex;
+  justify-content: center;
+
+  height: 80px;
+  padding: 0 1rem;
+
+  background: var(--main);
+
+}
+.innerContainer{
+  width: 100%;
+  max-width: 1120px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1{
+    color: var(--white);
+
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    span{
+      font-weight: bold;
+    }
+  }
+
+  a{
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    font-weight: normal;
+
+    background: var(--secondary);
+    color: var(--white);
+  }
+}
