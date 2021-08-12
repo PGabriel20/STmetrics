@@ -61,7 +61,7 @@
   width: 100%;
   height: fit-content;
 
-  margin-top: 3rem;
+  margin-top: 2rem;
   
   display: flex;
   justify-content: space-between;
@@ -78,6 +78,7 @@
     
     strong{
       color: var(--title);
+      line-height: 2.5rem;
     }
     
     h4{
