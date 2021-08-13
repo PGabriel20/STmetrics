@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
 
 // import { Container } from './styles';
 
-const Vehicles: React.FC = () => {
-  const [vehicles, setVehicles] = useState(0);
+interface vehiclesData {
+  amount: number
+}
 
-  useEffect(()=>{
-    api.get('vehicles').then(res => {
-      setVehicles(res.data.count);
-    }).catch(error => {
-      alert('Failed to fetch data from api');
-    });
-  },[]);
-
+const Vehicles: React.FC<vehiclesData> = ({amount}) => {
   return (
     <div>
-        <h3>{vehicles}</h3>
+        <h3>{amount}</h3>
         <strong>AMOUNT OF VEHICLES</strong>
     </div>
   );

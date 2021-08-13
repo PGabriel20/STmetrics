@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
 
 // import { Container } from './styles';
 
-const Movies: React.FC = () => {
-  const [movies, setMovies] = useState(0);
+interface moviesData {
+  amount: number
+}
 
-  useEffect(()=>{
-    api.get('films').then(res => {
-      setMovies(res.data.count);
-    }).catch(error => {
-      alert('Failed to fetch data from api');
-    });
-  },[]);
-
+const Movies: React.FC<moviesData> = ({amount}) => {
   return (
     <div>
-        <h3>{movies}</h3>
+        <h3>{amount}</h3>
         <strong>AMOUNT OF MOVIES</strong>
     </div>
   );

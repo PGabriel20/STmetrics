@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
 
 // import { Container } from './styles';
 
-const Starships: React.FC = () => {
-  const [starships, setStarships] = useState(0);
+interface starshipsData {
+  amount: number
+}
 
-  useEffect(()=>{
-    api.get('starships').then(res => {
-      setStarships(res.data.count);
-    }).catch(error => {
-      alert('Failed to fetch data from api');
-    });
-  },[]);
-
+const Starships: React.FC<starshipsData> = ({amount}) => {
   return (
     <div>
-        <h3>{starships}</h3>
+        <h3>{amount}</h3>
         <strong>AMOUNT OF STARSHIPS</strong>
     </div>
   );
