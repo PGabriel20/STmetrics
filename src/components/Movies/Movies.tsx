@@ -3,12 +3,12 @@ import api from '../../services/api';
 
 // import { Container } from './styles';
 
-const Starships: React.FC = () => {
-  const [starships, setStarships] = useState(0);
+const Movies: React.FC = () => {
+  const [movies, setMovies] = useState(0);
 
   useEffect(()=>{
-    api.get('starships').then(res => {
-      setStarships(res.data.count);
+    api.get('films').then(res => {
+      setMovies(res.data.count);
     }).catch(error => {
       alert('Failed to fetch data from api');
     });
@@ -16,10 +16,10 @@ const Starships: React.FC = () => {
 
   return (
     <div>
-        <h3>{starships}</h3>
-        <strong>AMOUNT OF STARSHIPS</strong>
+        <h3>{movies}</h3>
+        <strong>AMOUNT OF MOVIES</strong>
     </div>
   );
 }
 
-export default Starships;
+export default Movies;

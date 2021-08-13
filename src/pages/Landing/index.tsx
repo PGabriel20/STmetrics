@@ -1,5 +1,5 @@
 import React from 'react';
-import Movies from '../../components/MoviesCard/Movies';
+import Movies from '../../components/Movies/Movies';
 import People from '../../components/People/People';
 import Planets from '../../components/Planets/Planets';
 import Starships from '../../components/Starships/Starships';
