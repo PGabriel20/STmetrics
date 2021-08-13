@@ -87,11 +87,13 @@
   }
 }
 
-@media(max-width: 768px){
+@media(max-width: 1024px){
   .mainContainer{
     height: fit-content;
   }
+}
 
+@media(max-width: 768px){
   .bottomCards{
     justify-content: center;
     margin-top: 1rem;
