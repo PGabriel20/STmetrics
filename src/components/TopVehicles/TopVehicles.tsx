@@ -77,7 +77,7 @@ const TopVehicles: React.FC = () => {
           <h4>Loading...</h4>
         ):(
           topVehicles.map((vehicleName)=>{
-            return <h4>{vehicleName}</h4>
+            return <h4 key={vehicleName}>{vehicleName}</h4>
           })
         )}
     </div>

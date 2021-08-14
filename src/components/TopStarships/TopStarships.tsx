@@ -74,7 +74,7 @@ const TopStarships: React.FC = () => {
           <h4>Loading...</h4>
         ):(
           topStarships.map((starshipName)=>{
-            return <h4>{starshipName}</h4>
+            return <h4 key={starshipName}>{starshipName}</h4>
           })
         )}
     </div>
