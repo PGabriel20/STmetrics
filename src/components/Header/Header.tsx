@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     <header>
       <div className="innerContainer">
         <h1><span>SW</span>metrics</h1>
-        <a href="https://swapi.dev/" target='_blank'>API LINK</a>
+        <a href="https://swapi.dev/" target='_blank' rel="noreferrer">API LINK</a>
       </div>
     </header>  
   );
