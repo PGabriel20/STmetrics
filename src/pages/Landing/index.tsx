@@ -67,11 +67,13 @@ const LandingPage: React.FC = () => {
         <img src="./assets/SWicon.svg" alt="Star Wars Logo" />
         <h2>STAR WARS - Metrics and statistics</h2>
       </section>
-      
+
       {isLoading
       ?(
         <div className='mainInfoLoadingContainer'>
-          <Loading />
+          <section>
+            <Loading />
+          </section>
         </div>
       ):(
         <div className='topCards'>
