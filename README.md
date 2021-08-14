@@ -26,7 +26,6 @@ $npm start
 
 <ht>
 <h3>Tecnologies that were used:</h3>
-<br>
 - [Node.js](https://nodejs.org/en/)
 <br>
 - [React.js](https://reactjs.org/)
