@@ -42,57 +42,14 @@ const LandingPage: React.FC = () => {
         setStarshipCount(starshipAmount);
         setVehicleCount(vehicleAmount);
         setMovieCount(movieAmount);
-
       })
     )
   }
 
-  async function downloadPeopleData() {
-
-    let finishedDownloading = false;
-    let peoplePageData = [];
-
-
-    for (let i=1; finishedDownloading=true; i++) {
-      const response = await api.get('/people/?page=' + i);
-      peoplePageData.push(response.data.results);
-
-      console.log(peoplePageData);
-      
-      if(response.data.next === null){
-        finishedDownloading = true;
-        break;
-      }
-    }
-    
-    const peopleArray = peoplePageData.flat();
-    const allVehicles: Array<string> = peopleArray.map((x)=>x.vehicles).flat();
-    
-    console.log(peopleArray);
-    console.log(allVehicles);
-
-    var m = allVehicles.reduce((a:any, b:any) => {
-      a[b] = ++a[b] || 1;
-      return a;
-    }, {});
-
-    var arr = [];
-    for (var key in m) {
-      arr.push([key, m[key]]);
-    }
-
-    arr.sort(function(a, b) {
-      return a[1] - b[1];
-    });
-
-    console.log(arr.slice(-5).map(function(e) {
-      return e[0];
-    }));
-
-  }
+  
 
   useEffect(() => {
-    downloadPeopleData();
+    // downloadPeopleData();
     fetchMainData();
   }, []);
 
