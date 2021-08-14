@@ -30,9 +30,6 @@ const TopVehicles: React.FC = () => {
     const peopleArray = peoplePageData.flat();
     const allVehicles: Array<string> = peopleArray.map((arr)=>arr.vehicles).flat();
     
-    // console.log(peopleArray);
-    // console.log(allVehicles);
-
     var m = allVehicles.reduce((a:any, b:any) => {
       a[b] = ++a[b] || 1;
       return a;

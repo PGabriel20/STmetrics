@@ -28,12 +28,8 @@ const TopPlanets: React.FC = () => {
     
     //Joining all the data in one single array
     const filmArray = filmPageData.flat();
-    console.log(filmArray)
     const allPlanets: Array<string> = filmArray.map((arr)=>arr.planets).flat();
     
-    // console.log(peopleArray);
-    console.log(allPlanets.flat());
-
     var m = allPlanets.reduce((a:any, b:any) => {
       a[b] = ++a[b] || 1;
       return a;

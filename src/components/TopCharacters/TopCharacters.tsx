@@ -30,12 +30,8 @@ const TopCharacters: React.FC = () => {
     
     //Joining all the data in one single array
     const filmArray = filmPageData.flat();
-    console.log(filmArray)
     const allCharacters: Array<string> = filmArray.map((arr)=>arr.characters).flat();
     
-    // console.log(peopleArray);
-    console.log(allCharacters.flat());
-
     var m = allCharacters.reduce((a:any, b:any) => {
       a[b] = ++a[b] || 1;
       return a;
