@@ -72,10 +72,14 @@ const TopVehicles: React.FC = () => {
   return (
     <div>
         <strong>MOST POPULAR VEHICLES</strong>
-        {isLoading? <h4>Loading...</h4>:topVehicles.map((vehicleName)=>{
-          return <h4>{vehicleName}</h4>
-        })}
-        {}
+        {isLoading
+        ?(
+          <h4>Loading...</h4>
+        ):(
+          topVehicles.map((vehicleName)=>{
+            return <h4>{vehicleName}</h4>
+          })
+        )}
     </div>
   );
 }
