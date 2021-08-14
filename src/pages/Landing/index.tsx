@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Loading from '../../components/Loading/Loading';
+
 import Movies from '../../components/Movies/Movies';
 import People from '../../components/People/People';
 import Planets from '../../components/Planets/Planets';
@@ -20,8 +22,11 @@ const LandingPage: React.FC = () => {
   const [vehicleCount, setVehicleCount] = useState(0);
   const [movieCount, setMovieCount] = useState(0);
 
+  const [isLoading, setIsLoading] = useState(false);
+
 
   async function fetchMainData() {
+    setIsLoading(true);
     const apiURLs = ['/people', '/planets', '/starships', '/vehicles', '/films'];
 
     const getPeople = await api.get(apiURLs[0]);
@@ -44,13 +49,15 @@ const LandingPage: React.FC = () => {
         setVehicleCount(vehicleAmount);
         setMovieCount(movieAmount);
       })
-    )
+    ).catch((err)=>{
+      setIsLoading(false);
+      alert('Failed to fetch API data '+err);
+    })
+
+    setIsLoading(false);
   }
 
-  
-
   useEffect(() => {
-    // downloadPeopleData();
     fetchMainData();
   }, []);
 
@@ -60,13 +67,21 @@ const LandingPage: React.FC = () => {
         <img src="./assets/SWicon.svg" alt="Star Wars Logo" />
         <h2>STAR WARS - Metrics and statistics</h2>
       </section>
-      <div className='topCards'>
-        <People amount={peopleCount}/>
-        <Planets amount={planetCount}/>
-        <Starships amount={starshipCount}/>
-        <Vehicles amount={vehicleCount}/>
-        <Movies amount={movieCount}/>
-      </div>
+      
+      {isLoading
+      ?(
+        <div className='mainInfoLoadingContainer'>
+          <Loading />
+        </div>
+      ):(
+        <div className='topCards'>
+          <People amount={peopleCount}/>
+          <Planets amount={planetCount}/>
+          <Starships amount={starshipCount}/>
+          <Vehicles amount={vehicleCount}/>
+          <Movies amount={movieCount}/>
+        </div>
+      )}
 
       <div className='bottomCards'>
         <TopVehicles />

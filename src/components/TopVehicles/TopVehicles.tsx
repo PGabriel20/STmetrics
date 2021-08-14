@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
+import Loading from '../Loading/Loading';
 
 // import { Container } from './styles';
 
@@ -74,7 +75,7 @@ const TopVehicles: React.FC = () => {
         <strong>MOST POPULAR VEHICLES</strong>
         {isLoading
         ?(
-          <h4>Loading...</h4>
+          <Loading />
         ):(
           topVehicles.map((vehicleName)=>{
             return <h4 key={vehicleName}>{vehicleName}</h4>
