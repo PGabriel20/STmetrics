@@ -7,8 +7,7 @@
 <h3>Prerequirements:</h3>
 <p>Before trying to run the project, you must have installed in your machine the following dependencies:
 [Node.js](https://nodejs.org/en/) and a text editor like [VSCode](https://code.visualstudio.com/)</p>
-<br><br>
-
+<br>
 <h4>How to run the project</h4>
 In order to execute the project from your PC you need to clone this repository or download the source file, and install de dependencies.
 <br>
@@ -35,7 +34,6 @@ $npm start
 - [Typescript](https://www.typescriptlang.org/)
 <br>
 - [Sass](https://sass-lang.com/)
-
 
 <h4>Author:</h4>
 Paulo Gabriel Porreca
