@@ -4,33 +4,78 @@ import api from '../../services/api';
 // import { Container } from './styles';
 
 const TopVehicles: React.FC = () => {
-  const [vehicles, setVehicles] = useState([]);
 
-  useEffect(()=>{
-    api.get('vehicles').then(res => {
-      setVehicles(res.data.results);
+  const [topVehicles, setTopVehicles] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-      const filteredArray = vehicles.map((x: any)=>{
-        return x.pilots
-      })
+  async function downloadPeopleData() {
+    setIsLoading(true);
 
-      console.log(filteredArray);
+    let finishedDownloading = false;
+    let peoplePageData = [];
 
-    }).catch(error => {
-      alert('Failed to fetch data from api' +error);
+    //fetching the data from every page
+    for (let i=1; finishedDownloading=true ; i++) {
+      const response = await api.get('/people/?page=' + i);
+      peoplePageData.push(response.data.results);
+
+      if(response.data.next === null){
+        finishedDownloading = true;
+        break;
+      }
+    }
+    
+    //Joining all the data in one single array
+    const peopleArray = peoplePageData.flat();
+    const allVehicles: Array<string> = peopleArray.map((arr)=>arr.vehicles).flat();
+    
+    // console.log(peopleArray);
+    // console.log(allVehicles);
+
+    var m = allVehicles.reduce((a:any, b:any) => {
+      a[b] = ++a[b] || 1;
+      return a;
+    }, {});
+
+    var arr = [];
+    for (var key in m) {
+      arr.push([key, m[key]]);
+    }
+
+    arr.sort((a, b) => {
+      return a[1] - b[1];
     });
-  },[]);
+
+    const top5VehiclesUrls: Array<string> = arr.slice(-5).map((e) => e[0]);
+
+    fetchPeopleUrls(top5VehiclesUrls);
+  }
+  
+  async function fetchPeopleUrls(vehiclesURL: Array<string>){
+
+    const apiURLs: Array<string> = vehiclesURL;
+    let top5vehicles: Array<string> = [];
+
+    for (let i=0; i<=4; i++) {
+      const response = await api.get(apiURLs[i]);
+      top5vehicles.push(response.data.name);
+    }
+
+    setTopVehicles(top5vehicles);
+    setIsLoading(false);
+  }
+  
+  useEffect(()=>{
+    downloadPeopleData();
+  },[])
 
   return (
     <div>
         <strong>MOST POPULAR VEHICLES</strong>
-        {vehicles.map((vehicle: any)=>{
-          return <h4>{vehicle.name}</h4>
+        {isLoading? <h4>Loading...</h4>:topVehicles.map((vehicleName)=>{
+          return <h4>{vehicleName}</h4>
         })}
-        <h4>VEHICLE</h4>
-        <h4>VEHICLE</h4>
-        <h4>VEHICLE</h4>
-        <h4>VEHICLE</h4>
+        {}
     </div>
   );
 }
