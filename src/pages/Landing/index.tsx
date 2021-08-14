@@ -5,6 +5,7 @@ import People from '../../components/People/People';
 import Planets from '../../components/Planets/Planets';
 import Starships from '../../components/Starships/Starships';
 import TopCharacters from '../../components/TopCharacters/TopCharacters';
+import TopPlanets from '../../components/TopPlanets/TopPlanets';
 import TopStarships from '../../components/TopStarships/TopStarships';
 import TopVehicles from '../../components/TopVehicles/TopVehicles';
 import Vehicles from '../../components/Vehicles/Vehicles';
@@ -71,6 +72,7 @@ const LandingPage: React.FC = () => {
         <TopVehicles />
         <TopStarships />
         <TopCharacters />
+        <TopPlanets />
       </div>
     </div>
   );
