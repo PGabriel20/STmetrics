@@ -1,4 +1,4 @@
-<h1>STmetrics</h1>
+<h1>SWmetrics</h1>
 <p>Web page that fetches data from the Star Wars API, showing the user the amount of people, planets, starships and vehicles that are present in the Star Wars universe.</p>
 <p>It also shows the most popular vehicles, starships, planets and characters.</p>
 
@@ -14,7 +14,7 @@ In order to execute the project from your PC you need to clone this repository o
 <h5>Installing the dependencies:</h5>
 First you need to navigate to the project folder by opening your terminal (cmd) using the command:
 <br>
-$cd STmetrics
+$cd swmetrics
 <br>
 
 <h4>Install the dependencies:</h4>
