@@ -9,7 +9,7 @@
 [Node.js](https://nodejs.org/en/) and a text editor like [VSCode](https://code.visualstudio.com/)</p>
 <br>
 <h4>How to run the project</h4>
-In order to execute the project from your PC you need to clone this repository or download the source file, and install de dependencies.
+In order to execute the project from your PC you need to clone this repository or download the source file, and install the dependencies.
 <br>
 <h5>Installing the dependencies:</h5>
 First you need to navigate to the project folder by opening your terminal (cmd) using the command:
